@@ -1,0 +1,26 @@
+
+.socket {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(237, 237, 237, 1);
+}
+
+.socket:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.small {
+    background-color: rgba(172, 213, 242, 1);
+}
+
+.medium {
+    background-color: rgba(127, 168, 201, 1);
+}
+
+.large {
+    background-color: rgba(82, 123, 160, 1);
+}
+
+.veryLarge {
+    background-color: rgba(37, 78, 119, 1);
+}
