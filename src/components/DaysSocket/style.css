@@ -10,6 +10,10 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+.socket-active {
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
 .small {
     background-color: rgba(172, 213, 242, 1);
 }

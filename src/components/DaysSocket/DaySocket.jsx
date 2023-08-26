@@ -28,18 +28,18 @@ const DaySocket = ({todayDate, backArr}) => {
 
     useEffect(() => {
         if (contrNum < 9) {
-            setStyle('socket low')
+            setStyle(isVisible ? 'socket socket-active low' : 'socket low')
         } else if(contrNum < 19) {
-            setStyle('socket medium')
+            setStyle(isVisible ? 'socket socket-active medium' :  'socket medium')
         } else if(contrNum < 29) {
-            setStyle('socket large')
+            setStyle(isVisible ? 'socket socket-active large': 'socket large')
         } else if(contrNum > 30) {
-            setStyle('socket veryLarge')
+            setStyle(isVisible ? 'socket socket-active veryLarge' : 'socket veryLarge')
         }
     }, [contrNum])
 
     return (
-        <div onClick={toggleVisibility} className={style}>
+        <div onClick={toggleVisibility} onMouseOver={toggleVisibility} onMouseLeave={toggleVisibility} className={style}>
             {isVisible === true ? <Tooltip
                 count={contrNum}
                 date={todayDate}
