@@ -1,0 +1,48 @@
+.flex-list {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.mt {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.zero {
+        height: 15px;
+        width: 15px;
+        background-color: rgba(237, 237, 237, 1);
+}
+
+.small {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(172, 213, 242, 1);
+}
+
+.medium {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(127, 168, 201, 1);
+}
+
+.large {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(82, 123, 160, 1);
+}
+
+.veryLarge {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(37, 78, 119, 1);
+}
+
+.smaller {
+    margin-right: 7px;
+}
+
+.bigger {
+    margin-left: 7px;
+}
