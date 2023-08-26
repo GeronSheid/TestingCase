@@ -1,17 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import './style.css'
-const DaySocket = ({contributionNumber, backArr}) => {
+import Tooltip from "../Tooltip/Tooltip";
+const DaySocket = ({todayDate, backArr}) => {
 
     const [contrNum, setContrNum] = useState(0)
     const [style, setStyle] = useState('socket ')
-    const day = contributionNumber;
+    const [isVisible, setVisible] = useState(false)
     const backTime = Object.keys(backArr);
+
+    const toggleVisibility = () => {
+        setVisible(!isVisible)
+    }
 
     let contrNumTmp = 0
 
     for (let i = 0; i<=backTime.length; i++) {
         const backDate = new Date(backTime[i])
-        if (backDate.toDateString() === contributionNumber) {
+        if (backDate.toDateString() === todayDate.toDateString()) {
             contrNumTmp = backArr[backTime[i]]
         }
     }
@@ -20,7 +25,6 @@ const DaySocket = ({contributionNumber, backArr}) => {
         setContrNum(contrNumTmp)
 
     }, [contrNumTmp]);
-    console.log(contrNum)
 
     useEffect(() => {
         if (contrNum < 9) {
@@ -34,9 +38,13 @@ const DaySocket = ({contributionNumber, backArr}) => {
         }
     }, [contrNum])
 
-    console.log(style)
     return (
-        <div className={style}></div>
+        <div onClick={toggleVisibility} className={style}>
+            {isVisible === true ? <Tooltip
+                count={contrNum}
+                date={todayDate}
+            /> : ''}
+        </div>
     );
 };
 
