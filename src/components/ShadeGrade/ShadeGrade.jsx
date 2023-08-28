@@ -1,16 +1,16 @@
 import React from 'react';
-import './ShadeGreade.css'
+import styles from './style.module.scss';
 const ShadeGrade = () => {
     return (
-        <div className='mt'>
-            <ul className='flex-list'>
-                <li className='smaller'>Меньше</li>
-                <li className='zero'></li>
-                <li className='small'></li>
-                <li className='medium'></li>
-                <li className='large'></li>
-                <li className='veryLarge'></li>
-                <li className='bigger'>Больше</li>
+        <div className={styles.mt}>
+            <ul className={styles.flexList}>
+                <li className={styles.smaller}>Меньше</li>
+                <li className={`${styles.zero} ${styles.socket}`}></li>
+                <li className={`${styles.small} ${styles.socket}`}></li>
+                <li className={`${styles.medium} ${styles.socket}`}></li>
+                <li className={`${styles.large} ${styles.socket}`}></li>
+                <li className={`${styles.veryLarge} ${styles.socket}`}></li>
+                <li className={styles.bigger}>Больше</li>
             </ul>
         </div>
     );

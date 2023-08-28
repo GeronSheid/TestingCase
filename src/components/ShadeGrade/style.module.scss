@@ -1,4 +1,4 @@
-.flex-list {
+.flexList {
     display: flex;
     align-items: center;
     gap: 2px;
@@ -7,6 +7,14 @@
 .mt {
     margin-top: 20px;
     margin-left: 40px;
+}
+
+.socket {
+    height: 15px;
+    width: 15px;
+    &:hover {
+        border: 1px solid #000000;
+    }
 }
 
 .zero {
@@ -46,3 +54,4 @@
 .bigger {
     margin-left: 7px;
 }
+

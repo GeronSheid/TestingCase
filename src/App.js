@@ -1,14 +1,18 @@
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 import Aside from "./components/Aside/Aside";
-import './index.css'
+import styles from './index.module.scss'
 import UpperMenu from "./components/UpperMenu/UpperMenu";
+import ShadeGrade from "./components/ShadeGrade/ShadeGrade";
 function App() {
   return (
-    <div className="App">
-        <UpperMenu/>
-        <div className='AppFlex'>
-            <Aside />
-            <Layout/>
+    <div className={styles.AppContainer}>
+        <div>
+            <UpperMenu/>
+            <div className={styles.AppFlex}>
+                <Aside />
+                <Layout/>
+            </div>
+            <ShadeGrade />
         </div>
     </div>
   );

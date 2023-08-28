@@ -1,8 +1,6 @@
 import React from 'react';
-import './style.css'
-import '../../index.css'
+import styles from './style.module.scss'
 const Tooltip = ({count, date}) => {
-
     const days = [
         'Воскресенье',
         'Понедельник',
@@ -12,7 +10,6 @@ const Tooltip = ({count, date}) => {
         'Пятница',
         'Суббота'
     ];
-
     const months = [
         'Январь',
         'Февраль',
@@ -28,9 +25,9 @@ const Tooltip = ({count, date}) => {
         'Декабрь'
     ]
     return (
-        <div className='tooltip'>
-            <b className='tooltip__heading'>{count} contributions</b>
-            <p className='tooltip__text'>
+        <div className={styles.tooltip}>
+            <b>{count} contributions</b>
+            <p>
                 <span>{days[new Date(date).getDay()]}, </span>
                 <span>{months[new Date(date).getMonth()]} </span>
                 <span>{new Date(date).getDate()}, </span>

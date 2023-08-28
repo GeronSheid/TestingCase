@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-right: 15px;
+  margin-bottom: 6px;
+}
+
+.li {
+  width: 60px;
+  display: flex;
+  flex-shrink: 1;
+  justify-content: center;
+}

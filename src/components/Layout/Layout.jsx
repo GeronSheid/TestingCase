@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import './DaysLayout.css';
-import '../index.css'
-import DaySocket from "./DaysSocket/DaySocket";
-import Tooltip from "./Tooltip/Tooltip";
+import styles from  './style.module.scss';
+import '../../index.module.scss'
+import DaySocket from "../DaysSocket/DaySocket";
 
 const Layout = () => {
 
@@ -26,21 +25,35 @@ const Layout = () => {
     }, [])
 
     const currentDate = new Date();
-    const dayOfWeek = currentDate.getDay();
+    let dayOfWeek = currentDate.getDay();
     const step = 1000 * 60 * 60 * 24;
     const iterations = 357 - (7 - dayOfWeek);
     const days = [];
-    for (let i = 1; i <= (7-dayOfWeek); i++) {
-        const day = new Date(currentDate.getTime() + i * step);
-        days.push(day)
+    const daysReversed = [];
+    if (dayOfWeek === 0) {
+        dayOfWeek = 7;
+        for (let i = 1; i <= (7-dayOfWeek); i++) {
+            const day = new Date(currentDate.getTime() + i * step);
+            days.push(day)
+        }
+    } else {
+        for (let i = 1; i <= (7-dayOfWeek); i++) {
+            const day = new Date(currentDate.getTime() + i * step);
+            daysReversed.push(day)
+        }
+        days.push(...daysReversed.reverse())
     }
     for (let i= 0; i <= iterations-1; i++ ) {
         const day = new Date(currentDate.getTime() - i * step);
         days.push(day)
     }
     return (
-        <div className='daysGrid'>
-            {days.reverse().map(el => <DaySocket key={el} todayDate={el} backArr={data} />)}
+        <div className={styles.daysGrid}>
+            {days.reverse().map(el => <DaySocket
+                key={el}
+                todayDate={el}
+                backArr={data}
+            />)}
         </div>
     );
 };

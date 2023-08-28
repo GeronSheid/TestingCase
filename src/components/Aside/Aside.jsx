@@ -1,9 +1,9 @@
 import React from 'react';
-import './style.css'
+import styles from './style.module.scss'
 
 const Aside = () => {
     return (
-        <ul className='flex'>
+        <ul className={styles.flex}>
             <li>
                 Пн
             </li>
